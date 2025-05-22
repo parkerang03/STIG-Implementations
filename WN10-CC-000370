@@ -1,0 +1,27 @@
+<#
+.SYNOPSIS
+    This PowerShell script ensures that the convenience PIN for Windows 10 must be disabled.
+
+.NOTES
+    Author          : Angelo Parker
+    LinkedIn        : www.linkedin.com/in/angelo-parker-18811a246
+    GitHub          : github.com/parkerang03
+    Date Created    : 2025-05-21
+    Last Modified   : 2025-05-21
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-CC-000370
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    C:\Users\parkerang\Documents\WN10-CC-000370.ps1
+#>
+
+New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Force | Out-Null
+Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows\System" -Name "AllowDomainPINLogon" -Type DWord -Value 0
