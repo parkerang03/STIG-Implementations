@@ -1,0 +1,26 @@
+<#
+.SYNOPSIS
+    This PowerShell script ensures that the password history must be configured to 24 passwords remembered.
+
+.NOTES
+    Author          : Angelo Parker
+    LinkedIn        : www.linkedin.com/in/angelo-parker-18811a246
+    GitHub          : github.com/parkerang03
+    Date Created    : 2025-05-23
+    Last Modified   : 2025-05-23
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-AC-000020
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    C:\Users\parkerang\Documents\WN10-AC-000020.ps1
+#>
+
+net accounts /uniquepw:24
