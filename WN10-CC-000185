@@ -1,0 +1,27 @@
+<#
+.SYNOPSIS
+    This PowerShell script ensures that the default autorun behavior must be configured to prevent autorun commands.
+
+.NOTES
+    Author          : Angelo Parker
+    LinkedIn        : www.linkedin.com/in/angelo-parker-18811a246
+    GitHub          : github.com/parkerang03
+    Date Created    : 2025-05-25
+    Last Modified   : 2025-05-25
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-CC-000185
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    C:\Users\parkerang\Documents\WN10-CC-000185.ps1
+#>
+
+New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Force | Out-Null
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -Name "NoAutorun" -Type DWord -Value 1
