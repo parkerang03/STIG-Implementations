@@ -1,0 +1,26 @@
+<#
+.SYNOPSIS
+    This PowerShell script ensures that the system must be configured to audit Account Logon - Credential Validation successes.
+
+.NOTES
+    Author          : Angelo Parker
+    LinkedIn        : www.linkedin.com/in/angelo-parker-18811a246
+    GitHub          : github.com/parkerang03
+    Date Created    : 2025-05-25
+    Last Modified   : 2025-05-25
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-AU-000010
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+    C:\Users\parkerang\Documents\WN10-AU-000010.ps1
+#>
+
+AuditPol /set /subcategory:"Credential Validation" /success:enable
